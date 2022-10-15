@@ -9,3 +9,7 @@ message Person {
 }
 
 message EmptyMsg {}
+
+message Resp {
+    string reply = 1;
+}
