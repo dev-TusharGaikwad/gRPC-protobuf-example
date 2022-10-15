@@ -7,3 +7,5 @@ message Person {
     string text = 3;
     
 }
+
+message EmptyMsg {}
