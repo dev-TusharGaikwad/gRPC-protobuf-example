@@ -15,5 +15,6 @@ message Resp {
 }
 
 service Greet {
+    rpc Call (EmptyMsg) returns (Resp) {}
 }
 
