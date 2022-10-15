@@ -13,3 +13,7 @@ message EmptyMsg {}
 message Resp {
     string reply = 1;
 }
+
+service Greet {
+}
+
