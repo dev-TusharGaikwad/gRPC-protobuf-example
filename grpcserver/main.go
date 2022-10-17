@@ -45,3 +45,5 @@ func main() {
 }
 
 func initServer() {
+	log.Println()
+	fmt.Println("------------------------initServer Called-------------------")
