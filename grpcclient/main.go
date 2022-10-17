@@ -36,5 +36,6 @@ func main() {
 			fmt.Println("\n\nPress Any key to send request to server")
 			fmt.Scanln(&s)
 			runGreetClient(client)
+			time.Sleep(time.Second)
 		}
 	}()
