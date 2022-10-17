@@ -28,3 +28,4 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to connect: %v", err)
 	}
+	client := pb.NewGreetClient(conn)
