@@ -52,3 +52,6 @@ func initServer() {
 	obj.Age = 22
 	obj.Text = "this is sample text"
 }
+
+func (c *myServer) Call(ctx context.Context, in *pb.EmptyMsg) (*pb.Resp, error) {
+}
