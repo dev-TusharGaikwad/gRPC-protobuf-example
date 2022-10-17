@@ -11,3 +11,7 @@ import (
 
 	pb "proto-example/proto"
 )
+
+const (
+	address = "localhost:50051"
+)
