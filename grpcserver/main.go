@@ -18,3 +18,5 @@ const (
 type myServer struct {
 	pb.UnimplementedGreetServer
 }
+
+var obj pb.Person
