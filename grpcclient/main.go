@@ -17,3 +17,10 @@ const (
 )
 
 var obj pb.Person
+
+func main() {
+	conn, err := grpc.Dial(
+		address,
+		grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithBlock(),
+	)
