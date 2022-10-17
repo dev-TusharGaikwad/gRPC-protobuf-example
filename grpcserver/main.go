@@ -26,3 +26,6 @@ func main() {
 	initServer()
 
 	lis, err := net.Listen("tcp", port) // opening a port to listen from client
+	if err != nil {
+		log.Fatalf("failed to listen: %v", err)
+	}
