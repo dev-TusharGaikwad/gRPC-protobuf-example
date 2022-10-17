@@ -15,6 +15,7 @@ const (
 	port = ":50051"
 )
 
+// UnimplementedGreetServer can be embedded to have forward compatible implementations.
 type myServer struct {
 	pb.UnimplementedGreetServer
 }
