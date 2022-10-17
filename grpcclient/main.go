@@ -49,4 +49,5 @@ func main() {
 func runGreetClient(call pb.GreetClient) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	req := &pb.EmptyMsg{}
+	res, err := call.Call(ctx, req)
 }
