@@ -31,5 +31,7 @@ func main() {
 	client := pb.NewGreetClient(conn)
 
 	go func() {
+		for {
 			runGreetClient(client)
+		}
 	}()
