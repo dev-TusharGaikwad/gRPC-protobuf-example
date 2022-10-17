@@ -10,3 +10,8 @@ import (
 
 	pb "proto-example/proto"
 )
+
+const (
+	port = ":50051"
+)
+
