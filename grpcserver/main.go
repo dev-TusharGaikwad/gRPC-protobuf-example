@@ -32,6 +32,8 @@ func main() {
 	}
 
 	s := grpc.NewServer() // creating new gRPC server
+	defer s.Stop()
+
 	pb.RegisterGreetServer(s, &myServer{}) //(calls RegisterService): RegisterService registers a service and its implementation to the gRPC server.
 
 	log.Printf("Listening at %v , server : %T ", lis.Addr(), s)
