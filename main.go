@@ -1,19 +1,41 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
 
-	pb "github.com/golang/protobuf/proto"
-
-	proto "proto-example/proto"
+	quiz "gRPC-protobuf-example/datastruct"
 )
 
 func main() {
-	dataObj := &proto.Person{}
-	dataObj.Age = 22
-	dataObj.Name = "xyz"
+	jsonData, err := os.Open("filedata/quizdata.json")
 
-	obj, _ := pb.Marshal(dataObj)
+	if err != nil {
+		log.Fatal(err)
+	}
+	jsonByteData, err := ioutil.ReadAll(jsonData)
 
-	fmt.Println(obj)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var dataObj quiz.JsonData
+
+	// j := string(jsonByteData)
+
+	// fmt.Println(j)
+
+	err = json.Unmarshal(jsonByteData, &dataObj)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(dataObj, "---------------------")
+
+	for k, v := range dataObj.Quiz {
+		fmt.Println(k, v, "----------------------")
+	}
 }

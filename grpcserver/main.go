@@ -8,7 +8,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	pb "proto-example/proto"
+	pb "gRPC-protobuf-example/proto"
 )
 
 const (
