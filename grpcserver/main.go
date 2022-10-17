@@ -47,3 +47,7 @@ func main() {
 func initServer() {
 	log.Println()
 	fmt.Println("------------------------initServer Called-------------------")
+
+	obj.Name = "Tushar"
+	obj.Age = 22
+	obj.Text = "this is sample text"
