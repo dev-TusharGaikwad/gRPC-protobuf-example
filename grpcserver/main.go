@@ -35,3 +35,7 @@ func main() {
 	pb.RegisterGreetServer(s, &myServer{}) //(calls RegisterService): RegisterService registers a service and its implementation to the gRPC server.
 
 	log.Printf("Listening at %v , server : %T ", lis.Addr(), s)
+
+	if err := s.Serve(lis); err != nil {
+		log.Fatalf("failed to serve: %v", err)
+	}
