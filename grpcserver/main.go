@@ -54,4 +54,5 @@ func initServer() {
 }
 
 func (c *myServer) Call(ctx context.Context, in *pb.EmptyMsg) (*pb.Resp, error) {
+	res := pb.Resp{}
 }
