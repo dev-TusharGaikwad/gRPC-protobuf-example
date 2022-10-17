@@ -24,3 +24,7 @@ func main() {
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
 		grpc.WithBlock(),
 	)
+
+	if err != nil {
+		log.Fatalf("Failed to connect: %v", err)
+	}
