@@ -24,3 +24,5 @@ var obj pb.Person
 func main() {
 
 	initServer()
+
+	lis, err := net.Listen("tcp", port) // opening a port to listen from client
