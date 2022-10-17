@@ -45,3 +45,6 @@ func main() {
 	select {}
 
 }
+
+func runGreetClient(call pb.GreetClient) {
+}
