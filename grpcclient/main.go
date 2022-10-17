@@ -53,4 +53,6 @@ func runGreetClient(call pb.GreetClient) {
 	if err != nil {
 		log.Fatalf("%v.Call(_) = _, %v", call, err)
 	}
+	log.Printf("\n\nRequest sent")
+	fmt.Printf("%v", res)
 }
