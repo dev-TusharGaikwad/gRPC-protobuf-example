@@ -22,3 +22,5 @@ type myServer struct {
 var obj pb.Person
 
 func main() {
+
+	initServer()
