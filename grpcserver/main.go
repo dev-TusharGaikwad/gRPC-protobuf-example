@@ -15,3 +15,6 @@ const (
 	port = ":50051"
 )
 
+type myServer struct {
+	pb.UnimplementedGreetServer
+}
