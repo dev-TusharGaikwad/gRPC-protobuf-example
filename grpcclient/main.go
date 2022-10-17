@@ -30,4 +30,6 @@ func main() {
 	}
 	client := pb.NewGreetClient(conn)
 
+	go func() {
 			runGreetClient(client)
+	}()
