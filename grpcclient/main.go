@@ -32,6 +32,9 @@ func main() {
 
 	go func() {
 		for {
+			var s string
+			fmt.Println("\n\nPress Any key to send request to server")
+			fmt.Scanln(&s)
 			runGreetClient(client)
 		}
 	}()
