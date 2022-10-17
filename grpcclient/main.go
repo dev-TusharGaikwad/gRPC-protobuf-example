@@ -15,3 +15,5 @@ import (
 const (
 	address = "localhost:50051"
 )
+
+var obj pb.Person
