@@ -55,4 +55,5 @@ func initServer() {
 
 func (c *myServer) Call(ctx context.Context, in *pb.EmptyMsg) (*pb.Resp, error) {
 	res := pb.Resp{}
+	res.Reply = fmt.Sprintf("Response: %s, %d with the message: %s", obj.Name, obj.Age, obj.Text)
 }
