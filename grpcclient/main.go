@@ -50,4 +50,7 @@ func runGreetClient(call pb.GreetClient) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	req := &pb.EmptyMsg{}
 	res, err := call.Call(ctx, req)
+	if err != nil {
+		log.Fatalf("%v.Call(_) = _, %v", call, err)
+	}
 }
