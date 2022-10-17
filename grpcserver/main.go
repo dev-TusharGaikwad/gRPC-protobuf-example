@@ -30,3 +30,5 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
+
+	s := grpc.NewServer() // creating new gRPC server
