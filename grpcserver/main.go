@@ -5,10 +5,11 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"strconv"
 
 	"google.golang.org/grpc"
 
-	pb "proto-example/proto"
+	pb "grpc-api-service/proto"
 )
 
 const (
@@ -20,7 +21,7 @@ type myServer struct {
 	pb.UnimplementedGreetServer
 }
 
-var obj pb.Person
+var obj1 pb.Resp
 
 func main() {
 
@@ -47,14 +48,14 @@ func main() {
 func initServer() {
 	log.Println()
 	fmt.Println("------------------------initServer Called-------------------")
-
-	obj.Name = "Tushar"
+	obj := &pb.Person{}
+	obj.Name = "Ojas"
 	obj.Age = 22
 	obj.Text = "this is sample text"
+
+	obj1.Reply = obj.Name + " " + strconv.Itoa(int(obj.Age)) + " " + obj.Text
 }
 
 func (c *myServer) Call(ctx context.Context, in *pb.EmptyMsg) (*pb.Resp, error) {
-	res := pb.Resp{}
-	res.Reply = fmt.Sprintf("Response: %s, %d with the message: %s", obj.Name, obj.Age, obj.Text)
-	return &res, nil
+	return &pb.Resp{Reply: obj1.Reply}, nil
 }

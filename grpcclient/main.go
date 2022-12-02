@@ -9,14 +9,12 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	pb "proto-example/proto"
+	pb "grpc-api-service/proto"
 )
 
 const (
 	address = "localhost:50051"
 )
-
-var obj pb.Person
 
 func main() {
 	conn, err := grpc.Dial(
@@ -47,9 +45,7 @@ func main() {
 }
 
 func runGreetClient(call pb.GreetClient) {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
-
-	defer cancel()
+	ctx := context.Background()
 	req := &pb.EmptyMsg{}
 	res, err := call.Call(ctx, req)
 	if err != nil {

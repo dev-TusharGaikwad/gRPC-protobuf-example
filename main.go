@@ -5,7 +5,7 @@ import (
 
 	pb "github.com/golang/protobuf/proto"
 
-	proto "proto-example/proto"
+	proto "grpc-api-service/proto"
 )
 
 func main() {
